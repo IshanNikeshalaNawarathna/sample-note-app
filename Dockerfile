@@ -4,8 +4,14 @@ FROM node:20-alpine
 #working directory
 WORKDIR /app
 
+#copy the package.json file
+COPY package.json .
+
+#install the dependencies
+RUN npm install
+
 #copy this file
 COPY . .
 
 #run the app
-CMD ["node","index.js"]
+CMD ["npm","start"]
