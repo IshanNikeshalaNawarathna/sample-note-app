@@ -1,5 +1,5 @@
 const a = 20;
-const b = 100;
+const b = 800;
 
 const sum = a + b;
 
