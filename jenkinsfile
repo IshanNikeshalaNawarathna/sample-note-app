@@ -15,9 +15,10 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                withCredentials([string(credentialsId: 'note-apps', variable: 'docker-hubpass')]) {
-                     bat 'docker login -u ishannikeshala -p ${docker-hubpass}'
+                withCredentials([string(credentialsId: 'test-app', variable: 'test-app-pass')]) {
+                     bat 'docker login -u ishannikeshala -p ${test-app-pass}'
                 }
+
             }
         }
         stage('Deploy') { 
