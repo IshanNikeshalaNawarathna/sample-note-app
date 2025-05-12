@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build') { 
             steps {
-              bat 'docker build -t ishannikeshala/node-app:%BUILD_NUMBER% .'
+              bat 'docker build -t ishannikeshala/node-app .'
             }
         }
         stage('Test') { 
@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                 bat 'docker push ishannikeshala/node-app:%BUILD_NUMBER%'
+                 bat 'docker push ishannikeshala/node-app'
             }
         }
     }
